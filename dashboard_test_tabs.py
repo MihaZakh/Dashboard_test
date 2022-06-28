@@ -13,6 +13,7 @@ for login_pass in logins:
     VALID_USERNAME_PASSWORD_PAIRS.update({login_pass.split(':')[0]: login_pass.split(':')[1]})
 
 app = Dash(__name__)
+server = app.server
 auth = dash_auth.BasicAuth(
     app,
     VALID_USERNAME_PASSWORD_PAIRS
